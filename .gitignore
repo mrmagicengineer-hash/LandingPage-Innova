@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env
+/.pnp
+.pnp.js
+*.log
+package-lock.json
+/.idea
+.vscode
+/.DS_Store
