@@ -1,3 +1,5 @@
+import LanguageSwitcher from './LanguageSwitcher';
+
 export function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white border-b border-[#0F0F0F]/10 z-50">
@@ -21,13 +23,10 @@ export function Navbar() {
             </a>
           </div>
 
-          {/* CTA Button */}
-          <button 
-            onClick={() => document.getElementById('lead-section')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-[#0F0F0F] text-white px-6 py-3 rounded-full hover:bg-[#0F0F0F]/90 transition-colors"
-          >
-            Talk to an expert
-          </button>
+          {/* Language switcher replaces previous CTA */}
+          <div className="flex items-center gap-4">
+            <LanguageSwitcher />
+          </div>
         </div>
       </div>
     </nav>
