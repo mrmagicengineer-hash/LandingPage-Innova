@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import '../../styles/innova.css';
 import Navbar from './Navbar';
 import Hero from './Hero';
@@ -11,32 +11,7 @@ import Footer from './Footer';
 import WhatsAppButton from './WhatsAppButton';
 
 export default function Landing() {
-  const cursorRef = useRef<HTMLDivElement | null>(null);
-
   useEffect(() => {
-    const cursor = cursorRef.current;
-    if (!cursor) return;
-
-    const onMove = (e: MouseEvent) => {
-      cursor.style.left = `${e.clientX}px`;
-      cursor.style.top = `${e.clientY}px`;
-    };
-
-    const onEnter = () => {
-      cursor.style.width = '40px';
-      cursor.style.height = '40px';
-    };
-    const onLeave = () => {
-      cursor.style.width = '12px';
-      cursor.style.height = '12px';
-    };
-
-    document.addEventListener('mousemove', onMove);
-    document.querySelectorAll('a, button').forEach((el) => {
-      el.addEventListener('mouseenter', onEnter);
-      el.addEventListener('mouseleave', onLeave);
-    });
-
     // Scroll reveal observer
     const observer = new IntersectionObserver(
       (entries) => {
@@ -61,11 +36,6 @@ export default function Landing() {
     window.addEventListener('scroll', onScroll);
 
     return () => {
-      document.removeEventListener('mousemove', onMove);
-      document.querySelectorAll('a, button').forEach((el) => {
-        el.removeEventListener('mouseenter', onEnter);
-        el.removeEventListener('mouseleave', onLeave);
-      });
       observer.disconnect();
       window.removeEventListener('scroll', onScroll);
     };
@@ -73,7 +43,6 @@ export default function Landing() {
 
   return (
     <>
-      <div className="cursor" ref={cursorRef} />
       <Navbar />
       <Hero />
       <TechMarquee />

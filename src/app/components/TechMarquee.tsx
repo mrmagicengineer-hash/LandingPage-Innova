@@ -6,7 +6,7 @@ export default function TechMarquee() {
       <div className="marquee-track">
         {[...tools, ...tools].map((tool, i) => (
           <div key={i} className="marquee-item">
-            <tool.icon className="w-8 h-8" />
+            <tool.icon className="w-16 h-16" />
             {tool.name}
           </div>
         ))}
