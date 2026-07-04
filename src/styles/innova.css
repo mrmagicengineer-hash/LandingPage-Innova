@@ -15,6 +15,13 @@ body::before{content:'';position:fixed;inset:0;z-index:999;pointer-events:none;b
 
 .grid-bg{position:absolute;inset:0;z-index:0;background-image:linear-gradient(var(--eq-border) 1px, transparent 1px),linear-gradient(90deg, var(--eq-border) 1px, transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 0%, black 40%, transparent 100%)}
 
+/* Water drop CELL grid — cuadrícula interactiva del Hero (anim/WaterDropGridVideo) */
+.hero-cells-wrap{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;mask-image:radial-gradient(ellipse 85% 80% at 50% 20%, black 45%, transparent 100%)}
+.hero-cell-grid{position:absolute;inset:-1px;display:grid;pointer-events:auto}
+.hero-cell{position:relative;border-right:1px solid var(--eq-border);border-bottom:1px solid var(--eq-border);overflow:hidden}
+.hero-cell-fill{position:absolute;inset:0;background:var(--eq-accent);opacity:0;transform:scale(0.6);will-change:opacity,transform}
+@media(max-width:900px){.hero-cells-wrap{display:none}}
+
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:24px 48px;background:rgba(247,248,250,0.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--eq-border);transition:padding 0.3s var(--eq-ease)}
 .nav-logo{font-family:var(--eq-font-head);font-size:24px;font-weight:800;letter-spacing:-0.5px;color:var(--eq-text);display:flex;align-items:center;gap:10px}
 .nav-logo-icon{height:32px;width:auto;display:block}

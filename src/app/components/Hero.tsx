@@ -1,7 +1,9 @@
+import WaterDropGridVideo from './anim/WaterDropGridVideo';
+
 export default function Hero() {
   return (
     <section id="hero">
-      <div className="grid-bg" />
+      <WaterDropGridVideo />
       <div className="hero-orb hero-orb-1" />
       <div className="hero-orb hero-orb-2" />
 
