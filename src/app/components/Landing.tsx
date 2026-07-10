@@ -9,6 +9,7 @@ import ClientLogos from './ClientLogos';
 import LeadSection from './LeadSection';
 import Footer from './Footer';
 import WhatsAppButton from './WhatsAppButton';
+import FilosofiaEmpresarial from './MisionyVision';
 
 export default function Landing() {
   const cursorRef = useRef<HTMLDivElement | null>(null);
@@ -80,6 +81,7 @@ export default function Landing() {
       <Services />
       <HowItWorks />
       <ClientLogos />
+      <FilosofiaEmpresarial/>
       <LeadSection />
       <Footer />
       <WhatsAppButton />

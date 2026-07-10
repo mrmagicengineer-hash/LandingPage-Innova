@@ -134,3 +134,125 @@ footer{background:var(--eq-ink2);border-top:1px solid rgba(255,255,255,0.08);pad
 .cursor{position:fixed;width:12px;height:12px;background:var(--eq-accent);border-radius:50%;pointer-events:none;z-index:9999;transition:transform 0.15s,width 0.3s,height 0.3s,background 0.3s;transform:translate(-50%,-50%);mix-blend-mode:difference}
 
 @media(max-width:900px){nav{padding:16px 24px}.nav-links{display:none}#hero{padding:100px 24px 60px}.hero-stats{position:static;flex-direction:row;margin-top:48px}.services-grid{grid-template-columns:1fr}.how-grid{grid-template-columns:1fr}.how-visual{display:none}.clients-logos{grid-template-columns:repeat(2,1fr)}.footer-top{grid-template-columns:1fr 1fr}#services,#how,#clients,#lead,footer{padding-left:24px;padding-right:24px}}
+
+/* ==========================================================================
+   SECCIÓN MISIÓN Y VISIÓN (Estilo unificado con Hero)
+   ========================================================================== */
+
+.mv-section {
+  position: relative;
+  padding: 120px 48px; /* Mismo padding lateral que el Hero */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; /* Para darle buena presencia aireada */
+}
+
+/* Reutilizamos el concepto de orbe del Hero para mantener la atmósfera */
+.mv-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0,188,242,0.08) 0%, transparent 70%);
+  bottom: -100px;
+  right: 20%;
+  z-index: 1;
+}
+
+.mv-container {
+  max-width: 1200px; /* Un ancho ideal para diseño en dos columnas */
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Encabezado de la sección */
+.mv-header {
+  text-align: left; /* Alineado a la izquierda como el contenido del Hero */
+  margin-bottom: 64px;
+  animation: fadeUp 0.8s var(--eq-ease) both;
+}
+
+.mv-eyebrow {
+  font-family: var(--eq-font-body);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--eq-muted);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.mv-title {
+  font-family: var(--eq-font-serif);
+  font-size: clamp(40px, 5vw, 64px); /* Un poco más pequeño que el H1 del hero */
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: var(--eq-text);
+}
+
+/* El toque elegante de tu itálica con el degradado del Hero */
+.mv-title em {
+  font-style: italic;
+  background: linear-gradient(135deg, var(--eq-accent) 0%, #0B2D4A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Grid para Misión y Visión */
+.mv-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  width: 100%;
+  /* Animación ligeramente retrasada para una entrada fluida */
+  animation: fadeUp 0.9s var(--eq-ease) 0.2s both; 
+}
+
+@media (min-width: 768px) {
+  .mv-grid {
+    grid-template-columns: 1fr 1fr; /* Dos columnas perfectas en escritorio */
+    gap: 48px;
+  }
+}
+
+/* Tarjetas con la estética semi-transparente y limpia del Hero */
+.mv-card {
+  background: rgba(255, 255, 255, 0.02); /* Fondo ultra sutil */
+  border: 1px solid var(--eq-border); /* Usando tu borde del sistema */
+  padding: 48px;
+  /* Un corte sutil en la esquina inferior derecha para imitar tus botones con clip-path (Opcional, pero le da identidad) */
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
+  transition: all 0.4s var(--eq-ease);
+}
+
+.mv-card:hover {
+  border-color: rgba(0, 188, 242, 0.4); /* Iluminación con tu acento */
+  background: rgba(0, 188, 242, 0.02);
+  transform: translateY(-4px);
+}
+
+.mv-card h3 {
+  font-family: var(--eq-font-serif);
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--eq-text);
+  margin-bottom: 20px;
+}
+
+.mv-card h3 em {
+  font-style: italic;
+  color: var(--eq-accent); /* Resalta la palabra clave con tu azul */
+}
+
+.mv-card p {
+  font-family: var(--eq-font-body);
+  font-size: 15px;
+  color: var(--eq-muted);
+  line-height: 1.8; /* Misma soltura de lectura que el sub del hero */
+}
